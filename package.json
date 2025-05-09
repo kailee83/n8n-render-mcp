@@ -1,0 +1,12 @@
+{
+  "name": "n8n-render-mcp",
+  "version": "1.0.0",
+  "description": "n8n custom with Google Calendar MCP",
+  "scripts": {
+    "n8n": "n8n"
+  },
+  "dependencies": {
+    "n8n": "^1.44.0"
+  }
+}
+

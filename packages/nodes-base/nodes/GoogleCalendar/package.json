@@ -1,0 +1,26 @@
+{
+    "name": "n8n-nodes-google-calendar",
+    "version": "1.0.0",
+    "description": "Custom Google Calendar node for n8n",
+    "main": "GoogleCalendar.node.ts",
+    "author": "Kailee83400",
+    "license": "MIT",
+    "keywords": ["n8n", "node", "Google", "Calendar"],
+    "n8n": {
+      "credentials": [
+        {
+          "name": "googleCalendarOAuth2Api",
+          "type": "credentials",
+          "file": "./credentials/GoogleCalendarOAuth2Api.ts"
+        }
+      ],
+      "nodes": [
+        {
+          "name": "GoogleCalendar",
+          "type": "node",
+          "file": "GoogleCalendar.node.ts"
+        }
+      ]
+    }
+  }
+  

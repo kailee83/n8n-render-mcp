@@ -2,16 +2,27 @@ services:
   - type: web
     name: n8n
     env: docker
-    repo: https://github.com/votre-nom/votre-repo.git
-    branch: main
-    plan: starter
-    dockerfilePath: ./Dockerfile
+    plan: free # Changé de "starter" à "free"
+    healthCheckPath: /
     envVars:
       - key: N8N_BASIC_AUTH_USER
-        sync: false
+        value: admin
       - key: N8N_BASIC_AUTH_PASSWORD
-        sync: false
+        value: admin123
       - key: N8N_ENCRYPTION_KEY
-        sync: false
+        generateValue: true
       - key: PORT
         value: 5678
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_HOST
+        fromService:
+          name: n8n
+          type: web
+          property: host
+      - key: N8N_PROTOCOL
+        value: https
+      - key: NODE_ENV
+        value: production
+      - key: N8N_METRICS
+        value: false # Changé à false pour économiser des ressources

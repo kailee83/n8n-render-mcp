@@ -1,49 +1,24 @@
 services:
   - type: web
-    name: n8n-db
+    name: n8n-mcp
     env: docker
-    plan: free
-    region: singapore
+    repo: https://github.com/kailee83/n8n-render-mcp
     branch: main
     dockerfilePath: Dockerfile
-    healthCheckPath: /
+    plan: free
+    autoDeploy: true
     envVars:
-      # Configuration Database
-      - key: DB_TYPE
-        value: postgresdb
-      - key: DB_POSTGRESDB_URL
-        fromDatabase:
-          name: n8n-db
-          property: connectionString
-      - key: DB_POSTGRESDB_SSL
-        value: "true"  # Obligatoire pour Render PostgreSQL
-      
-      # Sécurité n8n
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
       - key: N8N_BASIC_AUTH_USER
-        value: "admin"  # À remplacer par un nom d'utilisateur complexe
+        value: "admin"
       - key: N8N_BASIC_AUTH_PASSWORD
-        generateValue: true  # Génère un mot de passe aléatoire sécurisé
-      - key: N8N_ENCRYPTION_KEY
-        generateValue: true
-      
-      # Configuration Google Calendar (à ajouter)
-      - key: GOOGLE_CALENDAR_CLIENT_ID
-        sync: false  # Ne pas synchroniser avec le dépôt Git
-      - key: GOOGLE_CALENDAR_CLIENT_SECRET
-        sync: false
-      - key: GOOGLE_CALENDAR_CALLBACK_URL
-        value: "https://${RENDER_SERVICE_NAME}.onrender.com/oauth2/callback"
-      
-      # Configuration générale
-      - key: N8N_PORT
-        value: "5678"
-      - key: N8N_PROTOCOL
-        value: https
-      - key: NODE_ENV
-        value: production
-      - key: N8N_METRICS
-        value: "false"
+        value: "password"
       - key: N8N_CUSTOM_EXTENSIONS
-        value: "/home/node/.n8n/custom"  # Pour charger vos nodes personnalisés
+        value: /data/custom
+
+      - key: GENERIC_TIMEZONE
+        value: Asia/Singapore
+      - key: N8N_HOST
+        value: 0.0.0.0
+

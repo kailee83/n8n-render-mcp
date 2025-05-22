@@ -1,15 +1,25 @@
-
 {
   "name": "n8n-nodes-gmail-mcp",
-  "main": "dist/GmailMCP.node.js",
-  "scripts": {
-    "build": "tsc"
+  "version": "1.0.0",
+  "description": "Un nœud n8n personnalisé pour Gmail",
+  // ... autres champs ...
+  "dependencies": {
+    "n8n-workflow": "^1.0.0" // Assurez-vous d'avoir cette ligne !
   },
-  "types": "dist/GmailMCP.node.d.ts",
-  "files": [
-    "dist"
-  ],
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0", // Si vous l'avez ici aussi, assurez-vous de la compatibilité
+    "@types/node": "^20.0.0"
+    // ... d'autres dépendances de développement
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "n8n": {
+    "nodes": [
+      "dist/nodes/GmailMCP.node.js" // ou votre chemin correct
+    ]
   }
+  // ... autres champs
 }

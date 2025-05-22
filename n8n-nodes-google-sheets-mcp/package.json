@@ -1,15 +1,25 @@
 {
   "name": "n8n-nodes-google-sheets-mcp",
   "version": "1.0.0",
-  "main": "dist/GoogleSheetsMCP.node.js",
-  "types": "dist/GoogleSheetsMCP.node.d.ts",
-  "scripts": {
-    "build": "tsc"
+  "description": "Un nœud n8n personnalisé pour Google-sheets",
+  // ... autres champs ...
+  "dependencies": {
+    "n8n-workflow": "^1.0.0" // Assurez-vous d'avoir cette ligne !
   },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0", // Si vous l'avez ici aussi, assurez-vous de la compatibilité
+    "@types/node": "^20.0.0"
+    // ... d'autres dépendances de développement
   },
-  "peerDependencies": {
-    "n8n-workflow": "^1.17.0"
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "n8n": {
+    "nodes": [
+      "dist/nodes/GoogleSheetsMCP.node.js" // ou votre chemin correct
+    ]
   }
+  // ... autres champs
 }

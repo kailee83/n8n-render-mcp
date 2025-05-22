@@ -1,5 +1,7 @@
 FROM n8n/n8n:1.45.0
 
+EXPOSE 5678
+
 RUN mkdir -p /data/custom
 
 COPY ./n8n-nodes-gmail-mcp /data/custom/n8n-nodes-gmail-mcp
@@ -11,3 +13,4 @@ ENV N8N_CUSTOM_EXTENSIONS="/data/custom/n8n-nodes-gmail-mcp:/data/custom/n8n-nod
 RUN cd /data/custom/n8n-nodes-gmail-mcp && npm install && npm run build && \
     cd /data/custom/n8n-nodes-google-sheets-mcp && npm install && npm run build && \
     cd /data/custom/n8n-nodes-notion-mcp && npm install && npm run build
+

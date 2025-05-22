@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "n8n-nodes-google-gmail",
-    "n8n-nodes-google-sheets",
-    "n8n-nodes-notion"
+    "n8n-nodes-gmail-mcp",
+    "n8n-nodes-google-sheets-mcp",
+    "n8n-nodes-notion-mcp"
   ],
   "scripts": {
-    "start": "n8n start"
+    "dev": "n8n dev",
+    "start": "n8n start",
+    "build": "npm run build -w n8n-nodes-gmail-mcp && npm run build -w n8n-nodes-google-sheets-mcp && npm run build -w n8n-nodes-notion-mcp"
   },
   "dependencies": {
     "n8n": "^1.45.0"

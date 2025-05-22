@@ -1,0 +1,15 @@
+{
+  "name": "n8n-nodes-google-sheets-mcp",
+  "version": "1.0.0",
+  "main": "dist/GoogleSheetsMCP.node.js",
+  "types": "dist/GoogleSheetsMCP.node.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "^1.17.0"
+  }
+}

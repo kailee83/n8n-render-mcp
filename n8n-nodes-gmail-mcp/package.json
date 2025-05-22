@@ -1,0 +1,8 @@
+{
+  "name": "n8n-nodes-google-gmail",
+  "version": "1.0.0",
+  "main": "dist/GmailMCP/GmailMCP.node.js",
+  "scripts": {
+    "build": "tsc"
+  }
+}

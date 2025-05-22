@@ -1,4 +1,5 @@
-FROM n8n/n8n:1.93.0
+
+FROM docker.n8n.io/n8n
 
 
 EXPOSE 5678

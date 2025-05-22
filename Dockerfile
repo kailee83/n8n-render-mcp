@@ -1,4 +1,5 @@
-FROM n8n/n8n:1.45.0
+FROM n8n/n8n:1.93.0
+
 
 EXPOSE 5678
 

@@ -2,14 +2,13 @@
   "name": "n8n-nodes-notion-mcp",
   "version": "1.0.0",
   "description": "Un nœud n8n personnalisé pour Gmail",
-  // ... autres champs ...
+ 
   "dependencies": {
-    "n8n-workflow": "^1.0.0" // Assurez-vous d'avoir cette ligne !
+    "n8n-workflow": "^1.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0", // Si vous l'avez ici aussi, assurez-vous de la compatibilité
-    "@types/node": "^20.0.0"
-    // ... d'autres dépendances de développement
+    "typescript": "^5.0.0", 
+   
   },
   "scripts": {
     "build": "tsc",
@@ -18,8 +17,7 @@
   },
   "n8n": {
     "nodes": [
-      "dist/nodes/NotionMCP.node.js" // ou votre chemin correct
+      "dist/nodes/NotionMCP.node.js"
     ]
   }
-  // ... autres champs
-}
+  

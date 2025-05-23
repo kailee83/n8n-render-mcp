@@ -10,8 +10,38 @@ export class GmailMCPNode implements INodeType {
     defaults: {
       name: 'Gmail MCP',
     },
-    inputs: ['main'],
-    outputs: ['main'],
-    properties: [],
+   
+inputs: [
+    {
+        id: 'main',          
+        displayName: 'Main', 
+        
+    },
+],
+outputs: [
+    {
+        id: 'main',
+        displayName: 'Main',
+        
+    },
+],
+    properties: [
+      {
+        displayName: 'Email Subject',
+        name: 'subject',
+        type: 'string',
+        default: '',
+        placeholder: 'e.g. Invoice or Meeting',
+        description: 'The subject of the email to search or send',
+      },
+      {
+        displayName: 'Email Address',
+        name: 'email',
+        type: 'string',
+        default: '',
+        placeholder: 'e.g. someone@example.com',
+        description: 'The email address of the sender or recipient',
+      },
+    ],
   };
 }
